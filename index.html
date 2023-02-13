@@ -8,20 +8,48 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
+        <style>
+            /* COULEUR PRIMAIRE DU TEXTE (ex : text-slate-500) */
+            .textePrimaire {
+                color: #f43f5e;
+            }
+            /* COULEUR SECONDAIRE DU TEXTE (ex : text-slate-400) */
+            .texteSecondaire{
+                color: #fb7185;
+            }
+            /* COULEUR PRIMAIRE DU BACKGROUND (ex : bg-slate-200) */
+            .backgroundCouleurPrimaire{
+                background-color: #fecdd3;
+            }
+            /* COULEUR SECONDAIRE DU BACKGROUND (ex : bg-slate-100 ou bg-slate-50) */
+            .backgroundCouleurSecondaire{
+                background-color: #fff1f2;
+            }
+        </style>
     </head>
     <body class="overflow-hidden" style="font-family: Mulish, sans-serif;">
 
         <!-- BUREAU (FORMAT XL) -->
-        <section class="w-full h-[100vh] overflow-hidde bg-violet-200 p-8">
+        <section class="w-full h-[100vh] overflow-hidde p-8 backgroundCouleurPrimaire">
 
             <!-- ALERTE -->
-            <div class="w-[35vh] px-4 py-3 bg-violet-100 rounded-lg">
+            <div class="w-[35vh] px-4 py-3 backgroundCouleurSecondaire rounded-lg">
 
-                <p class="text-violet-500 text-[12px] font-bold">Bienvenue sur PanelOS</p>
+                <p class="textePrimaire text-[14px] font-bold">Bienvenue sur PanelOS</p>
 
-                <p class="text-violet-400 text-[12px]">Vous êtes sur la version 0.0.1a de PanelOS !</p>
+                <p class="mt-1 texteSecondaire text-[12px]">Vous êtes sur la version 0.0.1a de PanelOS !</p>
 
-                <p class="text-violet-400 text-[12px]"><a href="https://github.com/Ormidales/PanelOS" class="underline cursor-pointer">Cliquer ici pour aller sur le github du projet</a></p>
+                <p class="texteSecondaire text-[12px]"><a href="https://github.com/Ormidales/PanelOS" class="underline cursor-pointer">Cliquer ici pour aller sur le github du projet</a></p>
+
+            </div>
+
+            <div class="mt-6 w-[45vh] grid grid-cols-3 px-4 py-3 backgroundCouleurSecondaire rounded-lg">
+
+                <div class="">
+
+
+
+                </div>
 
             </div>
 
