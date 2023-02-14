@@ -11,14 +11,29 @@
         <!-- GSAP -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/Draggable.min.js"></script>
+        <style>
+
+            ::-webkit-scrollbar {
+                width: 5px;
+            }
+            ::-webkit-scrollbar-track {
+                background: #e0e7ff;
+                border-radius: 50vh;
+            }
+            ::-webkit-scrollbar-thumb {
+                background-color: #c7d2fe;
+                border-radius: 50vh;
+            }
+
+        </style>
     </head>
     <body class="overflow-hidden" style="font-family: Mulish, sans-serif;">
 
         <!-- BUREAU (FORMAT XL) -->
-        <section class="w-full h-[100vh] overflow-hidde p-8 bg-indigo-200/75">
+        <section id="bureau" class="w-full h-[100vh] overflow-hidde p-8 bg-indigo-200/75">
 
             <!-- BARRE D'OUTILS -->
-            <div class="absolute bottom-0 left-0 w-full pb-8 flex items-center justify-center">
+            <div class="z-[200] absolute bottom-0 left-0 w-full pb-8 flex items-center justify-center">
 
                 <div class="px-4 py-3 flex items-center gap-4 bg-indigo-50 rounded-lg border border-indigo-300/50 shadow-indigo-300/25 shadow-sm">
 
@@ -147,16 +162,16 @@
             </div>
 
             <!-- WINDOW -->
-            <div class="absolute top-8 right-8 w-[75vh] bg-indigo-50 rounded-lg border border-indigo-300/50 shadow-indigo-300/25 shadow-sm">
+            <div id="app-window" class="z-[50] absolute top-8 right-8 w-[75vh] bg-indigo-50 rounded-lg border border-indigo-300/50 shadow-indigo-300/25 shadow-sm">
 
                 <!-- HEADER DE LA WINDOW -->
-                <div class="w-full px-4 py-2 border-b border-indigo-300/50 flex items-center justify-between">
+                <div id="app-window-header" class="w-full px-4 py-2 border-b border-indigo-300/50 flex items-center justify-between">
 
                     <p class="text-indigo-400 text-[14px]">Exemple de Window</p>
 
                     <div class="flex items-center">
 
-                        <div class="w-8 h-8 bg-indigo-200 rounded-lg flex items-center justify-center text-white">
+                        <div class="w-8 h-8 bg-indigo-200 rounded-lg flex items-center justify-center text-white hover:scale-95 transition-all">
 
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -169,7 +184,7 @@
                 </div>
 
                 <!-- BODY DE LA WINDOW -->
-                <div id="app-window" class="w-full h-[45vh] px-4 py-2 overflow-y-scroll">
+                <div class="w-full h-[45vh] px-4 py-2 overflow-y-scroll overflow-hidden">
 
                     <p class="text-indigo-400 text-[14px]">Exemple de Window</p>
                     <p class="text-indigo-400 text-[14px]">Exemple de Window</p>
@@ -222,6 +237,19 @@
             </div>
 
         </section>
+
+    <script>
+
+        var dragAppWindow = Draggable.create("#app-window" , {
+            bounds: document.getElementById("bureau"),
+            inertia: {top: {min: 0, max: 1000, end: [0,200,400,600]}},
+            dragClickables: true,
+            trigger: "#app-window-header",
+            zIndexBoost: false,
+            edgeResistance:0.5,
+        });
+
+    </script>
 
     </body>
 </html>
