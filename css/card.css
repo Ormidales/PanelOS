@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+.card{
+    width: 30vh;
+    height: 40vh;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    border: 1px solid #555555;
+    animation: ANIMATION_CARD_DOWN 0.3s ease-in-out 0s 1 normal forwards;
+    animation-iteration-count: 1;
+}
+
+.card_background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
+    opacity: 0;
+    animation: ANIMATION_CARD_BACKGROUND_OUT 0.3s ease-in-out 0s 1 normal forwards;
+    animation-iteration-count: 1;
+}
+
+.card_signs{
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: end;
+    gap: 5px;
+    margin: 20px;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    animation: ANIMATION_CARD_SIGNS_OUT 0.3s ease-in-out 0s 1 normal forwards;
+    animation-iteration-count: 1;
+}
+
+.card_signs_content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 30px;
+    height: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.card_signs_content svg{
+    width: 18px;
+    height: 18px;
+}
+
+.card_signs_content_text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: white;
+    padding: 3px 5px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    font-family: Inter, sans-serif;
+    font-size: 11px;
+}
+
+.card_signs_content_text svg{
+    width: 15px;
+    height: 15px;
+}
+
+.card_content{
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - padding);
+    padding: 20px;
+    opacity: 0;
+    animation: ANIMATION_CARD_CONTENT_OUT 0.3s ease-in-out 0s 1 normal forwards;
+    animation-iteration-count: 1;
+}
+
+.card_content h3{
+    color: white;
+    font-family: Inter, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+}
+
+.card_content p{
+    margin: 5px 0 5px;
+    color: white;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+.card_content span{
+    color: lightgray;
+    font-family: Inter, sans-serif;
+    font-size: 11px;
+}
+
+.card_button {
+    /* styles pour tous les boutons */
+    width: calc(100% - padding);
+    margin: 15px 0 0 0;
+    padding: 5px 10px;
+    background: white;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: black;
+}
+
+.card_button p {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    color: inherit;
+}
+
+.card_button svg {
+    margin: 0;
+    height: 12px;
+    width: 12px;
+}
+
+@keyframes ANIMATION_CARD_UP {
+    from {
+        transform: translateY(0px);
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+    }
+    to {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+    }
+}
+
+@keyframes ANIMATION_CARD_DOWN {
+    from {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+    }
+    to {
+        transform: translateY(0px);
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
+    }
+}
+
+@keyframes ANIMATION_CARD_BACKGROUND_IN {
+    from {
+        opacity: 0;
+        backdrop-filter: blur(0px);
+    }
+    to {
+        opacity: 1;
+        backdrop-filter: blur(2px);
+    }
+}
+
+@keyframes ANIMATION_CARD_BACKGROUND_OUT {
+    from {
+        opacity: 1;
+        backdrop-filter: blur(2px);
+    }
+    to {
+        opacity: 0;
+        backdrop-filter: blur(0px);
+    }
+}
+
+@keyframes ANIMATION_CARD_SIGNS_IN {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes ANIMATION_CARD_SIGNS_OUT {
+    from {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes ANIMATION_CARD_CONTENT_IN {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes ANIMATION_CARD_CONTENT_OUT {
+    from {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+}
+
+.card:hover{
+    animation: ANIMATION_CARD_UP 0.3s ease-in-out 0s 1 normal forwards;
+    animation-iteration-count: 1;
+}
+
+.card:hover .card_background {
+    animation: ANIMATION_CARD_BACKGROUND_IN 0.3s ease-in-out 0s 1 normal forwards;
+    animation-iteration-count: 1;
+}
+
+.card:hover .card_signs {
+    animation: ANIMATION_CARD_SIGNS_IN 0.3s ease-in-out 0.5s 1 normal forwards;
+    animation-iteration-count: 1;
+}
+
+.card:hover .card_content {
+    animation: ANIMATION_CARD_CONTENT_IN 0.3s ease-in-out 0.3s 1 normal forwards;
+    animation-iteration-count: 1;
+}
+
+.card_button:hover{
+    background: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    color: white;
+}

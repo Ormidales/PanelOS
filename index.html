@@ -12,7 +12,7 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/Draggable.min.js"></script>
 
-        <link href="css/animation.css" rel="stylesheet">
+        <link href="css/card.css" rel="stylesheet">
         <style>
 
             ::-webkit-scrollbar {
@@ -117,7 +117,7 @@
             </div>
 
             <!-- WINDOW -->
-            <div id="window_exempleWindow" class="z-[50] absolute top-8 right-8 w-[75vh] bg-indigo-50 rounded-lg border border-indigo-300/50 shadow-indigo-300/25 shadow-sm">
+            <div id="window_exempleWindow" class="z-[50] absolute top-8 right-8 w-[75vh] bg-indigo-50 rounded-lg border border-indigo-300/50 shadow-indigo-300/25 shadow-sm hover:z-[80]">
                 <div id="window_exempleWindow_header" class="w-full px-4 py-2 border-b border-indigo-300/50 text-indigo-400 flex items-center justify-between">
                     <div class="flex items-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
@@ -177,18 +177,84 @@
                     <p class="text-indigo-400 text-[14px]">Exemple de Window</p>
                     <p class="text-indigo-400 text-[14px]">Exemple de Window</p>
                 </div>
+            </div>
 
+            <!-- WINDOW -->
+            <div id="window_testCard" class="z-[50] absolute top-8 right-8 w-[75vh] bg-indigo-50 rounded-lg border border-indigo-300/50 shadow-indigo-300/25 shadow-sm hover:z-[80]">
+                <div id="window_testCard_header" class="w-full px-4 py-2 border-b border-indigo-300/50 text-indigo-400 flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 8.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v8.25A2.25 2.25 0 006 16.5h2.25m8.25-8.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-7.5A2.25 2.25 0 018.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 00-2.25 2.25v6" />
+                        </svg>
+                        <p class="text-[14px]">Test Card</p>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 bg-indigo-200 rounded-lg flex items-center justify-center text-white hover:scale-95 transition-all" onclick="window_testCard_fermer()">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full h-[45vh] p-4 overflow-y-scroll overflow-hidden">
+                    <div class="w-full flex items-center gap-3 flex-wrap">
+                        <!-- CARD -->
+                        <div class="card" style="background-image: url('https://m.media-amazon.com/images/I/8105Oc1+FPL.jpg')">
+                            <div class="card_background"></div>
+                            <div class="card_signs">
+                                <div class="card_signs_content_text">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+                                    </svg>
+                                    Disponible en 4k / 1080p / 720p
+                                </div>
+                                <div class="card_signs_content_text">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15M9 12l3 3m0 0l3-3m-3 3V2.25" />
+                                    </svg>
+                                    Disponible en téléchargement
+                                </div>
+                                <div class="card_signs_content_text">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 00-1.883 2.542l.857 6a2.25 2.25 0 002.227 1.932H19.05a2.25 2.25 0 002.227-1.932l.857-6a2.25 2.25 0 00-1.883-2.542m-16.5 0V6A2.25 2.25 0 016 3.75h3.879a1.5 1.5 0 011.06.44l2.122 2.12a1.5 1.5 0 001.06.44H18A2.25 2.25 0 0120.25 9v.776" />
+                                    </svg>
+                                    Marvel Cinematic Universe
+                                </div>
+                            </div>
+                            <div class="card_content">
+                                <h3>Spider-Man: Across The Spider-Verse</h3>
+                                <p>Après avoir retrouvé Gwen Stacy, Spider-Man, le sympathique héros originaire de Brooklyn, est catapulté à travers le Multivers, où il rencontre une équipe de Spider-Héros chargée d'en protéger l'existence. Mais lorsque les héros s'opposent sur la façon de gérer une nouvelle menace, Miles se retrouve confronté à eux et doit redéfinir ce que signifie être un héros afin de sauver les personnes qu'il aime le plus.</p>
+                                <span>Publié le 06/07/2023 | 2h 21min</span>
+                                <div class="card_button">
+                                    <p>Regarder</p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </section>
 
     <script>
 
-        const dragAppWindow = Draggable.create("#window_exempleWindow", {
+        const dragAppWindow_exempleWindow = Draggable.create("#window_exempleWindow", {
             bounds: document.getElementById("bureau"),
             inertia: {top: {min: 0, max: 1000, end: [0, 200, 400, 600]}},
             dragClickables: true,
             trigger: "#window_exempleWindow_header",
+            zIndexBoost: false,
+            edgeResistance: 0.5,
+        });
+
+        const dragAppWindow_testCard = Draggable.create("#window_testCard", {
+            bounds: document.getElementById("bureau"),
+            inertia: {top: {min: 0, max: 1000, end: [0, 200, 400, 600]}},
+            dragClickables: true,
+            trigger: "#window_testCard_header",
             zIndexBoost: false,
             edgeResistance: 0.5,
         });
