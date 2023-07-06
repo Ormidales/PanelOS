@@ -11,6 +11,8 @@
         <!-- GSAP -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/Draggable.min.js"></script>
+
+        <link href="css/animation.css" rel="stylesheet">
         <style>
 
             ::-webkit-scrollbar {
@@ -34,173 +36,104 @@
 
             <!-- BARRE D'OUTILS -->
             <div class="z-[200] absolute bottom-0 left-0 w-full pb-8 flex items-center justify-center">
-
                 <div class="px-4 py-3 flex items-center gap-4 bg-indigo-50 rounded-lg border border-indigo-300/50 shadow-indigo-300/25 shadow-sm">
-
                     <div class="w-14 h-14 bg-indigo-200 rounded-lg flex items-center justify-center text-white hover:scale-95 transition-all cursor-pointer">
-
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
                         </svg>
-
                     </div>
-
                     <div class="w-14 h-14 bg-indigo-200 rounded-lg flex items-center justify-center text-white hover:scale-95 transition-all cursor-pointer">
-
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                         </svg>
-
                     </div>
-
                     <div class="w-14 h-14 bg-indigo-200 rounded-lg flex items-center justify-center text-white hover:scale-95 transition-all cursor-pointer">
-
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
                         </svg>
-
                     </div>
-
                     <div class="w-14 h-14 bg-indigo-200 rounded-lg flex items-center justify-center text-white hover:scale-95 transition-all cursor-pointer">
-
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M18.375 12.739l-7.693 7.693a4.5 4.5 0 01-6.364-6.364l10.94-10.94A3 3 0 1119.5 7.372L8.552 18.32m.009-.01l-.01.01m5.699-9.941l-7.81 7.81a1.5 1.5 0 002.112 2.13" />
                         </svg>
-
                     </div>
-
                     <div class="w-14 h-14 bg-indigo-200 rounded-lg flex items-center justify-center text-white hover:scale-95 transition-all cursor-pointer">
-
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M18.375 12.739l-7.693 7.693a4.5 4.5 0 01-6.364-6.364l10.94-10.94A3 3 0 1119.5 7.372L8.552 18.32m.009-.01l-.01.01m5.699-9.941l-7.81 7.81a1.5 1.5 0 002.112 2.13" />
                         </svg>
-
                     </div>
-
                 </div>
-
             </div>
 
             <!-- ALERTE -->
             <div class="w-[35vh] px-4 py-3 bg-indigo-50 rounded-lg border border-indigo-300/50 shadow-indigo-300/25 shadow-sm">
-
                 <p class="text-indigo-500 text-[14px] font-bold flex items-center" style="line-height: 16px;">Bienvenue sur PanelOS<span class="ml-2 px-2 py-1 bg-indigo-200 rounded-lg text-white text-[12px]">v0.0.1a</span></p>
-
                 <p class="mt-1 text-indigo-400 text-[12px]">Vous êtes sur la version 0.0.1a de PanelOS !</p>
-
                 <p class="text-indigo-400 text-[12px]"><a href="https://github.com/Ormidales/PanelOS" class="underline cursor-pointer">Cliquer ici pour aller sur le github du projet</a></p>
-
             </div>
 
             <!-- GESTION DES APPLICATIONS -->
             <div class="mt-6 w-[45vh] grid grid-cols-4 gap-4 p-4 bg-indigo-50 rounded-lg border border-indigo-300/50 shadow-indigo-300/25 shadow-sm">
-
-                <div class="w-full h-[9vh] bg-indigo-200 rounded-lg flex items-center justify-center text-white hover:scale-95 transition-all cursor-pointer">
-
+                <div class="w-full h-[9vh] bg-indigo-200 rounded-lg flex items-center justify-center text-white hover:scale-95 transition-all cursor-pointer" onclick="window_exempleWindow_ouvrir()">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[5vh] h-[5vh]">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
                     </svg>
-
                 </div>
-
                 <div class="w-full h-[9vh] bg-indigo-200 rounded-lg flex items-center justify-center text-white hover:scale-95 transition-all cursor-pointer">
-
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[5vh] h-[5vh]">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                     </svg>
-
                 </div>
-
                 <div class="w-full h-[9vh] bg-indigo-200 rounded-lg flex items-center justify-center text-white hover:scale-95 transition-all cursor-pointer">
-
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[5vh] h-[5vh]">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
                     </svg>
-
                 </div>
-
                 <div class="w-full h-[9vh] bg-indigo-200 rounded-lg flex items-center justify-center text-white hover:scale-95 transition-all cursor-pointer">
-
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[5vh] h-[5vh]">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M18.375 12.739l-7.693 7.693a4.5 4.5 0 01-6.364-6.364l10.94-10.94A3 3 0 1119.5 7.372L8.552 18.32m.009-.01l-.01.01m5.699-9.941l-7.81 7.81a1.5 1.5 0 002.112 2.13" />
                     </svg>
-
                 </div>
-
                 <div class="w-full h-[9vh] bg-indigo-200 rounded-lg flex items-center justify-center text-white hover:scale-95 transition-all cursor-pointer">
-
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[5vh] h-[5vh]">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
                     </svg>
-
                 </div>
-
                 <div class="w-full h-[9vh] bg-indigo-200 rounded-lg flex items-center justify-center text-white hover:scale-95 transition-all cursor-pointer">
-
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[5vh] h-[5vh]">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z" />
                     </svg>
-
                 </div>
-
                 <div class="w-full h-[9vh] bg-indigo-200 rounded-lg flex items-center justify-center text-white hover:scale-95 transition-all cursor-pointer">
-
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[5vh] h-[5vh]">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
                     </svg>
-
                 </div>
-
                 <div class="w-full h-[9vh] bg-indigo-200 rounded-lg flex items-center justify-center text-white hover:scale-95 transition-all cursor-pointer">
-
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[5vh] h-[5vh]">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
                     </svg>
-
                 </div>
-
-            </div>
-
-            <!-- GESTION DES ONGLETS FERMES -->
-            <div class="z-[200] absolute top-8 right-8 max-w-[85vh] px-4 py-3 bg-indigo-50 rounded-lg border border-indigo-300/50 shadow-indigo-300/25 shadow-sm flex items-center gap-3 overflow-x-auto">
-
-                <div class="px-2 py-1 bg-indigo-200 rounded-lg min-w-[18vh] flex items-center justify-center">
-
-                    <p class="text-white text-[14px]">Exemple de Window</p>
-
-                </div>
-
-                <div class="px-2 py-1 bg-indigo-200 rounded-lg min-w-[18vh] flex items-center justify-center">
-
-                    <p class="text-white text-[14px]">Exemple de Window</p>
-
-                </div>
-
             </div>
 
             <!-- WINDOW -->
-            <div id="app-window" class="z-[50] absolute top-8 right-8 w-[75vh] bg-indigo-50 rounded-lg border border-indigo-300/50 shadow-indigo-300/25 shadow-sm">
-
-                <div id="app-window-header" class="w-full px-4 py-2 border-b border-indigo-300/50 flex items-center justify-between">
-
-                    <p class="text-indigo-400 text-[14px]">Exemple de Window</p>
-
+            <div id="window_exempleWindow" class="z-[50] absolute top-8 right-8 w-[75vh] bg-indigo-50 rounded-lg border border-indigo-300/50 shadow-indigo-300/25 shadow-sm">
+                <div id="window_exempleWindow_header" class="w-full px-4 py-2 border-b border-indigo-300/50 text-indigo-400 flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+                        </svg>
+                        <p class="text-[14px]">Exemple de Window</p>
+                    </div>
                     <div class="flex items-center">
-
-                        <div class="w-8 h-8 bg-indigo-200 rounded-lg flex items-center justify-center text-white hover:scale-95 transition-all">
-
+                        <div class="w-8 h-8 bg-indigo-200 rounded-lg flex items-center justify-center text-white hover:scale-95 transition-all" onclick="window_exempleWindow_fermer()">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                             </svg>
-
                         </div>
-
                     </div>
-
                 </div>
-
                 <div class="w-full h-[45vh] px-4 py-2 overflow-y-scroll overflow-hidden">
-
                     <p class="text-indigo-400 text-[14px]">Exemple de Window</p>
                     <p class="text-indigo-400 text-[14px]">Exemple de Window</p>
                     <p class="text-indigo-400 text-[14px]">Exemple de Window</p>
@@ -243,10 +176,6 @@
                     <p class="text-indigo-400 text-[14px]">Exemple de Window</p>
                     <p class="text-indigo-400 text-[14px]">Exemple de Window</p>
                     <p class="text-indigo-400 text-[14px]">Exemple de Window</p>
-
-
-
-
                 </div>
 
             </div>
@@ -255,16 +184,18 @@
 
     <script>
 
-        var dragAppWindow = Draggable.create("#app-window" , {
+        const dragAppWindow = Draggable.create("#window_exempleWindow", {
             bounds: document.getElementById("bureau"),
-            inertia: {top: {min: 0, max: 1000, end: [0,200,400,600]}},
+            inertia: {top: {min: 0, max: 1000, end: [0, 200, 400, 600]}},
             dragClickables: true,
-            trigger: "#app-window-header",
+            trigger: "#window_exempleWindow_header",
             zIndexBoost: false,
-            edgeResistance:0.5,
+            edgeResistance: 0.5,
         });
 
     </script>
+
+    <script src="javascript/windowProperties.js"></script>
 
     </body>
 </html>
